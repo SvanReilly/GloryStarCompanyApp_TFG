@@ -6,22 +6,35 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/golorycoin"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/golorycoin"
         android:supportsRtl="true"
-        android:theme="@style/Theme.GloryStarCompanyApp"
+        android:theme="@style/Theme.GloryStarCompany"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.GloryStarCompanyApp.NoActionBar">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".SettingsActivity">
+        </activity>
+        <activity
+            android:name=".FirstActivity">
+        </activity>
+        <activity
+            android:name=".SecondActivity">
+        </activity>
+        <activity
+            android:name=".ThirdActivity">
+        </activity>
+        <activity
+            android:name=".ThreeInARowActivity">
         </activity>
     </application>
 
