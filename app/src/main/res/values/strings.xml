@@ -1,13 +1,30 @@
 <resources>
-    <string name="app_name">GloryStarCompanyApp</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">GloryStarCompany</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+
+    <!-- Strings for LogIn -->
+
+    <string name="boton_login">Continuar</string>
+    <string name="texto_registrarse">¿Recordar?</string>
+    <string name="correo_textView">Usuario</string>
+    <string name="contraseña_textView">Contraseña</string>
+    <string name="username_hint">Escriba un nombre de usuario</string>
+    <string name="password_hint">Establezca su contraseña</string>
+    <string name="confirm_password_hint">Confirmar contraseña</string>
+    <string name="mail_hint">Escriba un email</string>
+
+    <string name="registrarseText">¿Aún no tienes cuenta?</string>
+
+    <!-- Strings for ... -->
+
+
+    <!-- Strings for Item -->
+
+    <string name="nameTextTextViewItem">Nombre de Usuario</string>
+    <string name="mailTextTextViewItem">Correo registrado</string>
+    <string name="winsTextTextViewItem">Victorias Totales</string>
+    <string name="defeatsTextTextViewItem">Derrotas Totales</string>
+    <string name="GloryCoinsTextTextViewItem">0</string>
+
+
 </resources>

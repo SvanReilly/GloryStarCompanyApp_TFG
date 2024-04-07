@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/second"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".SecondActivity" >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:text="Hello Second Activity!" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/gradient_background">
+
+<!--        <ImageView-->
+<!--            android:id="@+id/GloryStarLogoImageView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="200sp"-->
+<!--            android:layout_gravity="center|center"-->
+<!--            android:layout_marginTop="20sp"-->
+<!--            android:src="@drawable/glorystarcompanylogo"-->
+<!--            />-->
+
+
+
+        <ImageButton
+            android:id="@+id/imageButtonBackSecond"
+            android:layout_width="80sp"
+            android:layout_height="60sp"
+            app:srcCompat="@drawable/back"
+            android:scaleType="fitCenter"
+            android:background="@color/cardview_shadow_end_color"
+            />
+
+        <ImageView
+            android:id="@+id/crearUsuarioImageView"
+            android:layout_width="match_parent"
+            android:layout_height="75sp"
+            android:src="@drawable/crearusuario"
+            tools:layout_gravity="center|center"
+            android:scaleType="centerCrop"
+            />
+
+<!--        <ImageView-->
+<!--            android:id="@+id/usernameImageView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="45sp"-->
+<!--            android:layout_marginTop="25sp"-->
+<!--            android:src="@drawable/usuario"-->
+<!--            tools:layout_gravity="center|center"-->
+<!--            />-->
+
+        <EditText
+            android:id="@+id/cajaTextoNewUser"
+            android:layout_width="256sp"
+            android:layout_height="48sp"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:background="@color/whiteColor"
+            android:padding="5sp"
+            android:hint="@string/username_hint"
+            android:textColorHint="@color/grayColor"
+            android:textColor="@color/blackColor"
+            android:textStyle="italic"
+            />
+
+<!--        <ImageView-->
+<!--            android:id="@+id/passwordImageView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="75sp"-->
+<!--            android:layout_marginTop="5sp"-->
+<!--            android:src="@drawable/contrasena"-->
+<!--            />-->
+
+        <EditText
+            android:id="@+id/cajaTextoNewPass"
+            android:layout_width="256sp"
+            android:layout_height="48sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20sp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:background="@color/whiteColor"
+            android:padding="5sp"
+            android:hint="@string/password_hint"
+            android:textColorHint="@color/grayColor"
+            android:textColor="@color/blackColor"
+            android:textStyle="italic"/>
+
+        <EditText
+            android:id="@+id/cajaTextoConfirmPass"
+            android:layout_width="256sp"
+            android:layout_height="48sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5sp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:background="@color/whiteColor"
+            android:padding="5sp"
+            android:hint="@string/confirm_password_hint"
+            android:textColorHint="@color/grayColor"
+            android:textColor="@color/blackColor"
+            android:textStyle="italic"/>
+
+        <EditText
+            android:id="@+id/cajaTextoMail"
+            android:layout_width="256sp"
+            android:layout_height="48sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10sp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:background="@color/whiteColor"
+            android:padding="5sp"
+            android:hint="@string/mail_hint"
+            android:textColorHint="@color/grayColor"
+            android:textColor="@color/blackColor"
+            android:textStyle="italic"/>
+
+
+        <ImageButton
+            android:id="@+id/imageButtonRegistrarNuevo"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            app:srcCompat="@drawable/registrarse"
+            android:scaleType="fitCenter"
+            android:layout_margin="10sp"
+            android:background="@color/cardview_shadow_end_color"
+            />
+
+    </LinearLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
