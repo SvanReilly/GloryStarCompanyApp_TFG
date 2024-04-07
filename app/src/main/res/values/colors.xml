@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="blackColor">#FF000000</color>
+    <color name="whiteColor">#FFFFFFFF</color>
+    <color name="grayColor">#757474</color>
+    <color name="blueishColor">#3F7B97</color>
+    <color name="brownishColor">#775849</color>
+    <color name="playButtonColor">#379F00</color>
+    <color name="red">#C33333</color>
+
+    <color name="gray">#5E5D5D</color>
+    <color name="light_green">#1ED760</color>
+    <color name="orange">#BF5300</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="salmon">#D3A07E</color>
+    <color name="blue">#2670A1</color>
+    <color name="background_color">#614E98</color>
+    <color name="green">#3C5935</color>
+    <color name="yellowish">#BF9453</color>
+    <color name="forGradientRegistrados1">#2C2A28</color>
+    <color name="forGradientRegistrados2">#AF381A</color>
+    <color name="forGradientRegistrados3">#CABF9A</color>
+    <color name="forGradientRegistrados4">#739E90</color>
+
+
+    <color name="glory_yellow">#FFC107</color>
+    <color name="glory_blue">#03447C</color>
+
+
+
+
 </resources>
