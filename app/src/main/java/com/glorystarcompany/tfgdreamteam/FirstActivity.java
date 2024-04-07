@@ -9,14 +9,17 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
-import com.bumptech.glide.Glide;
-import java.util.ArrayList;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.bumptech.glide.Glide;
+
+import java.util.ArrayList;
+//FUNCIONANDO//
 public class FirstActivity extends AppCompatActivity implements View.OnClickListener {
     private String username, pass;
     private ImageButton buttonContinuar, buttonRegistrarse;
-    private ImageView gloryStarLogoImageViewMain, usernameImageViewMain, passwordImageViewMain;
+    private ImageView gloryStarLogoImageViewMain, usernameImageViewMain, passwordImageViewMain, creditosImageButtonMain;
     private String loginMessage;
     private TextView usernameIns;
     private TextView passIns;
@@ -35,9 +38,10 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
 
+        creditosImageButtonMain = findViewById(R.id.gloryStarLogoImageViewActFirst);
 
 
-        gloryStarLogoImageViewMain = findViewById(R.id.GloryStarLogoImageView);
+        gloryStarLogoImageViewMain = findViewById(R.id.gloryStarLogoImageViewActFirst);
         usernameImageViewMain = findViewById(R.id.usernameImageView);
         passwordImageViewMain = findViewById(R.id.passwordImageView);
 
@@ -48,7 +52,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
         buttonContinuar = findViewById(R.id.imageButtonContinuar);
         Glide.with(this).asGif().load(R.drawable.entrar).into(buttonContinuar);
 
-        buttonRegistrarse=findViewById(R.id.imageButtonRegistrarse);
+        buttonRegistrarse = findViewById(R.id.imageButtonRegistrarse);
         Glide.with(this).asGif().load(R.drawable.registrarse).into(buttonRegistrarse);
 
         usernameIns = findViewById(R.id.cajaTextoCorreo);
@@ -60,6 +64,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
 
         buttonContinuar.setOnClickListener(this);
         buttonRegistrarse.setOnClickListener(this);
+        creditosImageButtonMain.setOnClickListener(this);
     }
 
     @Override
@@ -68,7 +73,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
         pass = passIns.getText().toString();
 
         if (view.getId() == R.id.imageButtonContinuar) {
-            if(username.isEmpty() || pass.isEmpty()) {
+            if (username.isEmpty() || pass.isEmpty()) {
                 loginMessage = "Escribe un nombre de usuario y su contraseña.";
                 showToast(loginMessage);
             } else {
@@ -97,13 +102,13 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
                     showToast(loginMessage);
                 }
             }
-        }
-
-
-        else if (view.getId() == R.id.imageButtonRegistrarse) {
+        } else if (view.getId() == R.id.imageButtonRegistrarse) {
             Intent goToSecondActivity = new Intent(this, SecondActivity.class);
             startActivity(goToSecondActivity);
             finish();
+        } else {
+            Intent goToCreditsActivity = new Intent(this, CreditsActivity.class);
+            startActivity(goToCreditsActivity);
         }
     }
 
@@ -118,6 +123,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
             public void onTick(long millisUntilFinished) {
                 // No es necesario hacer nada en cada tick
             }
+
             public void onFinish() {
                 toast.cancel(); // Cancela el Toast cuando el temporizador termina
             }

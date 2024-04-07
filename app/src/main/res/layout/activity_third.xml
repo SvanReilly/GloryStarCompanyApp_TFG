@@ -8,31 +8,131 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/gradient_background">
+    tools:context=".ThirdActivity"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/gradient_background">
+        android:background="@drawable/gradient_background"
+        >
 
-    <ImageButton
-            android:id="@+id/imageButtonBackThird"
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+<!--    <ImageButton-->
+<!--            android:id="@+id/imageButtonBackThird"-->
+<!--            android:layout_width="80sp"-->
+<!--            android:layout_height="60sp"-->
+<!--            app:srcCompat="@drawable/back"-->
+<!--            android:scaleType="fitCenter"-->
+<!--            android:layout_gravity="start"-->
+<!--            android:background="@color/cardview_shadow_end_color"-->
+<!--            />-->
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            />
+
+        <TextView
+            android:id="@+id/usernameTextViewThird"
+            android:layout_width="230sp"
+            android:layout_height="match_parent"
+            android:layout_margin="5sp"
+            android:layout_marginTop="5sp"
+            android:layout_weight="1"
+            android:text="@string/currentUserNameTextView"
+            android:textAlignment="center"
+            android:textColor="@color/glory_yellow"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            />
+
+        <ImageButton
+            android:id="@+id/settingsImageButton"
             android:layout_width="80sp"
             android:layout_height="60sp"
-            app:srcCompat="@drawable/back"
+            app:srcCompat="@drawable/settings"
+            android:layout_gravity="end"
+            android:scaleType="fitCenter"
+            android:layout_weight="1"
+            android:background="@color/cardview_shadow_end_color"
+            />
+    </TableRow>
+
+        <ImageView
+            android:id="@+id/gloryStarCompanyTitleView"
+            android:layout_width="match_parent"
+            android:layout_height="130sp"
+            app:srcCompat="@drawable/glorystarcompanytitle"
+            android:scaleType="centerCrop"
+            android:layout_weight="1"
+            />
+
+        <ImageButton
+            android:id="@+id/gamesImageButton"
+            android:layout_width="match_parent"
+            android:layout_height="95sp"
+            app:srcCompat="@drawable/juegos"
+            android:layout_weight="1"
             android:scaleType="fitCenter"
             android:background="@color/cardview_shadow_end_color"
             />
-    <TextView
-        android:id="@+id/helloThirdActivityTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textAlignment="center"
-        android:textSize="25sp"
-        android:textColor="@color/blackColor"
-        android:text="Hello Third Activity!" />
 
+        <ImageButton
+            android:id="@+id/onlineImageButton"
+            android:layout_width="match_parent"
+            android:layout_height="90sp"
+            app:srcCompat="@drawable/online"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:background="@color/cardview_shadow_end_color"
+            />
+
+        <ImageButton
+            android:id="@+id/recordsImageButton"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            app:srcCompat="@drawable/records"
+            android:scaleType="fitCenter"
+            android:layout_weight="1"
+            android:background="@color/cardview_shadow_end_color"
+            />
+
+        <ImageButton
+            android:id="@+id/eventsImageButton"
+            android:layout_width="match_parent"
+            android:layout_height="90sp"
+            app:srcCompat="@drawable/eventos"
+            android:scaleType="fitCenter"
+            android:layout_weight="1"
+            android:background="@color/cardview_shadow_end_color"
+            />
+
+        <ImageButton
+            android:id="@+id/logOutImageButton"
+            android:layout_width="match_parent"
+            android:layout_height="75sp"
+            app:srcCompat="@drawable/cerrarsesion"
+            android:scaleType="fitCenter"
+            android:layout_weight="1"
+            android:background="@color/cardview_shadow_end_color"
+            />
+
+        <ImageButton
+            android:id="@+id/creditosImageButton"
+            android:layout_width="match_parent"
+            android:layout_height="75sp"
+            app:srcCompat="@drawable/creditos"
+            android:scaleType="fitCenter"
+            android:layout_weight="1"
+            android:background="@color/cardview_shadow_end_color"
+            />
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

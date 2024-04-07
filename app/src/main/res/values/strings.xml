@@ -11,8 +11,6 @@
     <string name="username_hint">Escriba su nombre de usuario</string>
     <string name="password_hint">Escriba su contraseña</string>
 
-
-
     <string name="registrarseText">¿Aún no tienes cuenta?</string>
 
     <!-- Strings for SecondActivity -->
@@ -21,13 +19,24 @@
     <string name="new_password_hint">Contraseña nueva</string>
     <string name="confirm_password_hint">Confirmar contraseña</string>
     <string name="mail_hint">Escriba un email</string>
-    <!-- Strings for Item -->
+
+
+
+    <!-- Strings for SettingsActivity -->
 
     <string name="nameTextTextViewItem">Nombre de Usuario</string>
+    <string name="currentUserNameTextView">Nombre del usuario actual</string>
+
     <string name="mailTextTextViewItem">Correo registrado</string>
+    <string name="currentUserMailTextView">Mail del usuario actual</string>
+
     <string name="winsTextTextViewItem">Victorias Totales</string>
+    <string name="currentUserWinsTextView">Victorias del usuario actual</string>
+
     <string name="defeatsTextTextViewItem">Derrotas Totales</string>
-    <string name="GloryCoinsTextTextViewItem">0</string>
+    <string name="currentUserDefeatsTextView"> Derrotas del usuario actual</string>
+
+    <string name="currentUserGloryCoinsTextView">0</string>
 
 
 </resources>

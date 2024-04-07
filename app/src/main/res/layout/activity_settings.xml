@@ -11,9 +11,6 @@
     tools:context=".SettingsActivity"
     android:background="@drawable/gradient_background">
 
-
-
-
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,30 +19,182 @@
         <ImageButton
             android:id="@+id/imageButtonBackSettings"
             android:layout_width="80sp"
-            android:layout_height="60sp"
+            android:layout_height="match_parent"
             app:srcCompat="@drawable/back"
-            android:scaleType="fitCenter"
+            android:layout_gravity="start"
+            android:scaleType="centerInside"
             android:background="@color/cardview_shadow_end_color"
             />
 
         <ImageView
-            android:id="@+id/imageButton2"
-            android:layout_width="wrap_content"
+            android:id="@+id/settingsImageView"
+            android:layout_width="match_parent"
             android:layout_height="90sp"
             app:srcCompat="@drawable/ajustes"
-            android:paddingTop="15sp"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             android:background="@color/cardview_shadow_end_color"
             />
 
     </TableRow>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recView"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+    <View
+        android:id="@+id/topDivider"
+        android:layout_width="match_parent"
+        android:layout_height="2sp"
+        android:layout_margin="1sp"
+        android:background="?android:attr/listDivider" />
+
+        <TextView
+        android:id="@+id/usernameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_margin="5sp"
-        android:layout_marginTop="10sp"
+        android:layout_marginTop="5sp"
+        android:layout_weight="1"
+        android:text="@string/nameTextTextViewItem"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        android:textStyle="bold|italic" />
+
+        <TextView
+        android:id="@+id/usernameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_marginTop="5sp"
+        android:layout_weight="1"
+        android:text="@string/currentUserNameTextView"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_gravity="center"
         />
 
+        <TextView
+        android:id="@+id/mailLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_marginTop="5sp"
+        android:layout_weight="1"
+        android:text="@string/mailTextTextViewItem"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        android:textStyle="bold|italic" />
+
+        <TextView
+        android:id="@+id/mailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_marginTop="5sp"
+        android:layout_weight="1"
+        android:text="@string/currentUserMailTextView"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        />
+
+        <TextView
+        android:id="@+id/winsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_marginTop="5sp"
+        android:layout_weight="1"
+        android:text="@string/winsTextTextViewItem"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        android:textStyle="bold|italic" />
+
+        <TextView
+        android:id="@+id/winsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_marginTop="5sp"
+        android:layout_weight="1"
+        android:text="@string/currentUserWinsTextView"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        />
+
+        <TextView
+        android:id="@+id/defeatsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_marginTop="5sp"
+        android:layout_weight="1"
+        android:text="@string/defeatsTextTextViewItem"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        android:textStyle="bold|italic" />
+
+        <TextView
+        android:id="@+id/defeatsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_marginTop="5sp"
+        android:layout_weight="1"
+        android:text="@string/currentUserDefeatsTextView"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        />
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_margin="10sp">
+
+
+
+        <ImageView
+            android:id="@+id/gloryCoinImageViewIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="90sp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/glorycoin"
+            android:background="@color/cardview_shadow_end_color"
+            />
+
+        <TextView
+            android:id="@+id/gloryCoinAmountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:layout_marginTop="5sp"
+            android:layout_weight="1"
+            android:text="@string/currentUserGloryCoinsTextView"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="55sp"
+            android:layout_gravity="center"
+            android:textStyle="bold|italic" />
+
+    </TableRow>
+</LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

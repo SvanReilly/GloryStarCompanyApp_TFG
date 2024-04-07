@@ -8,8 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-
-public class UsuariosBD extends SQLiteOpenHelper{
+//FUNCIONANDO//
+public class UsuariosBD extends SQLiteOpenHelper {
 
     private ArrayList<Usuario> listaUsuario;
     private static final String DATABASE_NAME = "BDUsuariosGloryStarCompany.db";
@@ -17,11 +17,11 @@ public class UsuariosBD extends SQLiteOpenHelper{
     private static final String TABLE_NAME = "Usuarios";
     private static final String COLUMN_ID = "ID";
     private static final String COLUMN_NAME = "Nombre";
-    private static final String COLUMN_MAIL = "Correo";
     private static final String COLUMN_PASSWORD = "Contraseña";
-    private static final String COLUMN_GLORY_COIN_AMOUNT = "GloryCoins";
+    private static final String COLUMN_MAIL = "Correo";
     private static final String COLUMN_GAMES_WON = "Victorias";
     private static final String COLUMN_GAMES_LOST = "Derrotas";
+    private static final String COLUMN_GLORY_COIN_AMOUNT = "GloryCoins";
 
 
     private SQLiteDatabase databaseSQL;
@@ -65,8 +65,8 @@ public class UsuariosBD extends SQLiteOpenHelper{
         if (c != null) {
             try {
                 int nameIndex = c.getColumnIndex(COLUMN_NAME);
-                int mailIndex = c.getColumnIndex(COLUMN_MAIL);
                 int passIndex = c.getColumnIndex(COLUMN_PASSWORD);
+                int mailIndex = c.getColumnIndex(COLUMN_MAIL);
                 int winsIndex = c.getColumnIndex(COLUMN_GAMES_WON);
                 int defeatIndex = c.getColumnIndex(COLUMN_GAMES_LOST);
                 int gloryCoinAmountIndex = c.getColumnIndex(COLUMN_GLORY_COIN_AMOUNT);
@@ -74,10 +74,10 @@ public class UsuariosBD extends SQLiteOpenHelper{
                 while (c.moveToNext()) {
                     String name = (nameIndex != -1) ? c.getString(nameIndex) :
                             "Nombre de usuario no identificado";
-                    String mail = (mailIndex != -1) ? c.getString(mailIndex) :
-                            "Correo no disponible";
                     String password = (passIndex != -1) ? c.getString(passIndex) :
                             "Contraseña inexistente";
+                    String mail = (mailIndex != -1) ? c.getString(mailIndex) :
+                            "Correo no disponible";
                     int wins = (winsIndex != -1) ? c.getInt(winsIndex) :
                             0;
                     int defeats = (defeatIndex != -1) ? c.getInt(defeatIndex) :
@@ -85,7 +85,8 @@ public class UsuariosBD extends SQLiteOpenHelper{
                     int gloryCoinAmount = (gloryCoinAmountIndex != -1) ? c.getInt(gloryCoinAmountIndex) :
                             0;
 
-                    Usuario usuario = new Usuario(name, mail, password, wins, defeats, gloryCoinAmount);
+                    //Alejandro Ortega: DIABLOS PXTO como me has calentado el cabesa.
+                    Usuario usuario = new Usuario(name, password, mail, wins, defeats, gloryCoinAmount);
                     listaUsuario.add(usuario);
                 }
             } finally {
@@ -118,9 +119,9 @@ public class UsuariosBD extends SQLiteOpenHelper{
         listaUsuario = getUsuarios();
         for (int i = 0; i < listaUsuario.size(); i++) {
 
-            if (listaUsuario.get(i).getName().contains(usuario.getName())) {
+            if (listaUsuario.get(i).getName().equals(usuario.getName())) {
 
-//                usuario = listaUsuario.get(i);
+                usuario = listaUsuario.get(i);
 
                 // Incrementar las victorias y las monedas de gloria para el usuario ganador
                 ContentValues contentValues = new ContentValues();
@@ -140,17 +141,17 @@ public class UsuariosBD extends SQLiteOpenHelper{
         listaUsuario = getUsuarios();
         for (int i = 0; i < listaUsuario.size(); i++) {
 
-        if (listaUsuario.get(i).getName().contains(usuario.getName())) {
+            if (listaUsuario.get(i).getName().contains(usuario.getName())) {
 
-//            usuario = listaUsuario.get(i);
+                usuario = listaUsuario.get(i);
 
-            // Incrementar las derrotas
-            ContentValues contentValues = new ContentValues();
-            contentValues.put(COLUMN_GAMES_WON, usuario.getDefeats() + 1); // Incrementa las victorias
+                // Incrementar las derrotas
+                ContentValues contentValues = new ContentValues();
+                contentValues.put(COLUMN_GAMES_WON, usuario.getDefeats() + 1); // Incrementa las victorias
 
-            // Actualizar el registro del usuario perdedor
-            databaseSQL.update(TABLE_NAME, contentValues, COLUMN_NAME + "=?", new String[]{usuario.getName()});
-        }
+                // Actualizar el registro del usuario perdedor
+                databaseSQL.update(TABLE_NAME, contentValues, COLUMN_NAME + "=?", new String[]{usuario.getName()});
+            }
         }
         closeBD();
     }

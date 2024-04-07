@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/credits"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CreditsActivity"
+    android:background="@drawable/gradient_background">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <ImageButton
+            android:id="@+id/imageButtonBackCredits"
+            android:layout_width="60sp"
+            android:layout_height="50sp"
+            app:srcCompat="@drawable/back"
+            android:scaleType="fitCenter"
+            android:background="@color/cardview_shadow_end_color"
+            />
+
+        <ImageView
+            android:id="@+id/developedByImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/developedbycredit"
+            android:visibility="invisible"
+            />
+
+
+    </TableRow>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+
+
+        <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="45sp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/maikyImageView"
+                        android:layout_width="120sp"
+                        android:layout_height="70sp"
+                        app:srcCompat="@drawable/maiky"
+                        android:visibility="invisible"
+                        />
+
+                    <ImageView
+                        android:id="@+id/aaronImageView"
+                        android:layout_width="120sp"
+                        android:layout_height="70sp"
+                        app:srcCompat="@drawable/aaron"
+                        android:visibility="invisible"
+                        />
+
+
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                android:id="@+id/alejandroImageView"
+                android:layout_width="120sp"
+                android:layout_height="70sp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/alejandro"
+                android:visibility="invisible"
+                />
+
+
+                <ImageView
+                android:id="@+id/glorySCCreditsImageView"
+                android:layout_width="250sp"
+                android:layout_height="150sp"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/glorystarcompanylogo"
+                android:visibility="invisible"
+                />
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="45sp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/adriImageView"
+                        android:layout_width="120sp"
+                        android:layout_height="70sp"
+                        app:srcCompat="@drawable/adri"
+                        android:visibility="invisible"
+                        />
+
+                    <ImageView
+                        android:id="@+id/ikerImageView"
+                        android:layout_width="120sp"
+                        android:layout_height="70sp"
+                        app:srcCompat="@drawable/iker"
+                        android:visibility="invisible"
+                        />
+                </LinearLayout>
+            </TableRow>
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

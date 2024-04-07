@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
-
+//FUNCIONANDO//
 public class SecondActivity extends AppCompatActivity implements View.OnClickListener {
     private UsuariosBD firstActivityBD;
     private ArrayList<Usuario> listadoUsuariosExistentes;
@@ -27,13 +27,10 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
     private EditText nombreUsuarioEditTextMain, passwordEditTextMain, confirmPassEditTextMain, maileditTextMain;
     private String signUpMessage, newUserName, newUserPassWord, newUserConfirmPassWord, newUserMail;
     private Toast toast;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-//        Intent firstActivityIntentContainer = getIntent();
-//        firstActivityBD = (UsuariosBD) firstActivityIntentContainer.getSerializableExtra("usuariosGloryStarBD");
 
         crearUsuarioImageViewMain = findViewById(R.id.crearUsuarioImageView);
         Glide.with(this).asGif().load(R.drawable.crearusuario).into(crearUsuarioImageViewMain);

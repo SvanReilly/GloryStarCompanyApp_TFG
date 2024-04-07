@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import java.util.ArrayList;
-
+//FUNCIONANDO, SIN USOS//
 public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioViewHolder> {
     private ArrayList<Usuario> listaUsuario;
     public UsuarioAdapter(ArrayList<Usuario> listaUsuario) {this.listaUsuario = listaUsuario;}
@@ -21,7 +21,7 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioV
     @Override
     public UsuarioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.user_item_for_activity_settings, parent, false);
+                .inflate(R.layout.activity_games, parent, false);
         return new UsuarioViewHolder(view, parent.getContext());
     }
     @Override

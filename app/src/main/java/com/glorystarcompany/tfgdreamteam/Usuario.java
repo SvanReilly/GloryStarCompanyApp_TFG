@@ -1,7 +1,7 @@
 package com.glorystarcompany.tfgdreamteam;
 
 import java.io.Serializable;
-
+//FUNCIONANDO//
 public class Usuario implements Serializable {
     private String name, password, mail;
     private int wins, defeats, gcAmount;

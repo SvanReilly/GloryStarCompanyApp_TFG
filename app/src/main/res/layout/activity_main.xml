@@ -14,29 +14,44 @@
     <ImageView
         android:id="@+id/aDreamTeamProjectView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="180sp"
         app:srcCompat="@drawable/introcredit"
+        android:visibility="gone"
+        />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="50sp"
+        />
+
+    <ImageView
+        android:id="@+id/gloryStarCompanyLogoViewActMain"
+        android:layout_width="wrap_content"
+        android:layout_height="220sp"
+        app:srcCompat="@drawable/glorystarcompanylogo"
         android:layout_gravity="center"
-        android:scaleType="fitCenter"
+        android:scaleType="centerInside"
+        android:visibility="gone"
+
         />
 
     <Space
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        />
 
     <ImageView
         android:id="@+id/tapToContinueView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/taptocontinue"
-        android:layout_gravity="center"
-        android:layout_weight="1"
         android:visibility="gone"
         />
+
     <Space
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="5"/>
+        android:layout_weight="1"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat >
