@@ -86,6 +86,13 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
                     usuarioNuevo = new Usuario(newUserName, newUserPassWord, newUserMail);
 
                     firstActivityBD.insertUsuario(usuarioNuevo);
+
+                    for (int i = 0; i < firstActivityBD.getUsuarios().size(); i++) {
+                        if (usuarioNuevo.getName().equals(firstActivityBD.getUsuarios().get(i).getName())){
+                         usuarioNuevo = firstActivityBD.getUsuarios().get(i);
+                        }
+                    }
+
                     signUpMessage = "Usuario creado. Accediendo...";
                     showToast(signUpMessage);
                     Intent goToThirdActivity = new Intent(this, ThirdActivity.class);
