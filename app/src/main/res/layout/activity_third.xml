@@ -23,47 +23,40 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
-<!--    <ImageButton-->
-<!--            android:id="@+id/imageButtonBackThird"-->
-<!--            android:layout_width="80sp"-->
-<!--            android:layout_height="60sp"-->
-<!--            app:srcCompat="@drawable/back"-->
-<!--            android:scaleType="fitCenter"-->
-<!--            android:layout_gravity="start"-->
-<!--            android:background="@color/cardview_shadow_end_color"-->
-<!--            />-->
+
         <Space
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="4"
+            android:layout_weight="1"
             />
 
         <TextView
             android:id="@+id/usernameTextViewThird"
-            android:layout_width="230sp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="5sp"
             android:layout_marginTop="5sp"
-            android:layout_weight="1"
+            android:layout_weight="0.4"
             android:text="@string/currentUserNameTextView"
             android:textAlignment="center"
-            android:textColor="@color/glory_yellow"
+            android:gravity="center"
+            android:textColor="@color/blackColor"
+            android:fontFamily="monospace"
             android:textStyle="bold"
-            android:textSize="20sp"
+            android:textSize="13sp"
             android:layout_gravity="center"
-            android:visibility="invisible"
+            android:visibility="visible"
             />
 
         <ImageButton
             android:id="@+id/settingsImageButton"
-            android:layout_width="80sp"
+            android:layout_width="match_parent"
             android:layout_height="60sp"
-            app:srcCompat="@drawable/settings"
             android:layout_gravity="end"
-            android:scaleType="fitCenter"
             android:layout_weight="1"
             android:background="@color/cardview_shadow_end_color"
-            />
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/settings" />
     </TableRow>
 
         <ImageView
@@ -78,7 +71,7 @@
         <ImageButton
             android:id="@+id/gamesImageButton"
             android:layout_width="match_parent"
-            android:layout_height="95sp"
+            android:layout_height="94sp"
             app:srcCompat="@drawable/juegos"
             android:layout_weight="1"
             android:scaleType="fitCenter"
@@ -98,9 +91,9 @@
         <ImageButton
             android:id="@+id/recordsImageButton"
             android:layout_width="match_parent"
-            android:layout_height="60sp"
-            app:srcCompat="@drawable/records"
-            android:scaleType="fitCenter"
+            android:layout_height="90sp"
+            app:srcCompat="@drawable/ranking"
+            android:scaleType="centerInside"
             android:layout_weight="1"
             android:background="@color/cardview_shadow_end_color"
             />
@@ -128,7 +121,7 @@
         <ImageButton
             android:id="@+id/creditosImageButton"
             android:layout_width="match_parent"
-            android:layout_height="75sp"
+            android:layout_height="94sp"
             app:srcCompat="@drawable/creditos"
             android:scaleType="fitCenter"
             android:layout_weight="1"

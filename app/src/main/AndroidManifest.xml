@@ -29,26 +29,47 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SettingsActivity">
+            android:name=".SettingsActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
         </activity>
         <activity
-            android:name=".FirstActivity">
+            android:name=".FirstActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
         </activity>
         <activity
-            android:name=".SecondActivity">
+            android:name=".SecondActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
         </activity>
         <activity
-            android:name=".ThirdActivity">
+            android:name=".ThirdActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
         </activity>
         <activity
-            android:name=".CreditsActivity">
+            android:name=".CreditsActivity"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity">
         </activity>
         <activity
-            android:name=".GamesActivity">
+            android:name=".RankingActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
         </activity>
         <activity
-            android:name=".ThreeInARowActivity">
+            android:name=".GamesActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
         </activity>
+
+        <activity
+            android:name=".ThreeInARowActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
+        </activity>
+
     </application>
 
 </manifest>

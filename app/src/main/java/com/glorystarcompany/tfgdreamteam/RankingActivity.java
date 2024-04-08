@@ -1,73 +1,73 @@
 package com.glorystarcompany.tfgdreamteam;
 
 import android.os.Bundle;
-
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.bumptech.glide.Glide;
+import java.util.ArrayList;
+//FUNCIONANDO//
 
-public class ThreeInARowActivity extends AppCompatActivity {
+public class RankingActivity extends AppCompatActivity implements View.OnClickListener{
+
+    private ImageButton goBackImageButtonRankingMain;
+    private ImageView rankingImageViewMain;
+    private UsuariosBD usuariosGloryStarBD;
+
+    private ArrayList<Usuario> listadoUsuariosExistentes;
+    private RecyclerView recyclerViewRankingUsuarios;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_three_in_a_row);
+        setContentView(R.layout.activity_ranking);
+
+        recyclerViewRankingUsuarios = findViewById(R.id.recyclerViewRanking);
+
+        usuariosGloryStarBD = new UsuariosBD(getApplicationContext());
+        listadoUsuariosExistentes = usuariosGloryStarBD.getUsuarios();
+
+        rankingImageViewMain = findViewById(R.id.rankingImageView);
+        Glide.with(this).asGif().load(R.drawable.ranking).into(rankingImageViewMain);
+
+        goBackImageButtonRankingMain = findViewById(R.id.goBackImageButtonRanking);
+        Glide.with(this).asGif().load(R.drawable.back).into(goBackImageButtonRankingMain);
+
+        if (listadoUsuariosExistentes.size()<20){
+            usuariosGloryStarBD.insertarUsuariosTest();
+            listadoUsuariosExistentes = usuariosGloryStarBD.getUsuariosOrderByVictorias();
+        } else {
+            listadoUsuariosExistentes = usuariosGloryStarBD.getUsuariosOrderByVictorias();
+        }
+
+
+        UsuarioAdapter usuarioAdapter= new UsuarioAdapter(this, listadoUsuariosExistentes);
+
+
+        recyclerViewRankingUsuarios.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,
+                LinearLayoutManager.VERTICAL, false);
+        recyclerViewRankingUsuarios.setLayoutManager(linearLayoutManager);
+
+        recyclerViewRankingUsuarios.setAdapter(usuarioAdapter);
 
 
 
+
+        goBackImageButtonRankingMain.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        if (v.getId()==R.id.goBackImageButtonRanking){
+            finish();
+        }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
