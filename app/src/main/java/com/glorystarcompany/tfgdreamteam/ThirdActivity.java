@@ -26,6 +26,11 @@ public class ThirdActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
 
+        Intent gamesBackIntent = getIntent();
+        String usuarioActualGames = gamesBackIntent.getStringExtra("usuarioActualGames");
+
+        Intent chessGameResultIntent = getIntent();
+        String usuarioChessGame =  chessGameResultIntent.getStringExtra("usuarioResultante");
 
         Intent secondActivityIntentContainer = getIntent();
         usuarioNuevoLogueado = secondActivityIntentContainer.getStringExtra("usuarioActualSecondActivity");
@@ -35,11 +40,12 @@ public class ThirdActivity extends AppCompatActivity implements View.OnClickList
 
         if (usuarioLogueado == null && usuarioNuevoLogueado!=null){
             usuarioLogueado = usuarioNuevoLogueado;
-        } else if (usuarioLogueado == null && usuarioNuevoLogueado == null) {
+        } else if (usuarioLogueado == null && usuarioNuevoLogueado == null && usuarioActualGames==null) {
 
-            Intent chessGameResultIntent = getIntent();
-            usuarioLogueado = chessGameResultIntent.getStringExtra("usuarioResultante");
+            usuarioLogueado = usuarioChessGame;
 
+        } else if (usuarioLogueado == null && usuarioNuevoLogueado == null && usuarioChessGame == null) {
+            usuarioLogueado = usuarioActualGames;
         }
 
 

@@ -52,6 +52,7 @@ public class GamesActivity extends AppCompatActivity implements View.OnClickList
 
         if (v.getId()== R.id.imageButtonBackGamesToThird) {
             Intent goBackToThirdActivity = new Intent(this, ThirdActivity.class);
+            goBackToThirdActivity.putExtra("usuarioActualGames", usuarioActualGames);
             startActivity(goBackToThirdActivity);
             finish();
         } else if (v.getId()== R.id.chessGamesActivityImageView) {
