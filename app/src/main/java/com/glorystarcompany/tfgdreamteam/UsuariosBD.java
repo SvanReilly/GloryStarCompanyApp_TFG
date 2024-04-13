@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
 import java.util.Comparator;
 import java.util.Collections;
 import java.io.Serializable;
@@ -251,49 +253,102 @@ public class UsuariosBD extends SQLiteOpenHelper {
 
 
     //Pendiente de Revisión//
-    public void updateWinsUsuario(String nombre) {
-
-//        listaUsuario = getUsuarios();
-//        for (int i = 0; i < listaUsuario.size(); i++) {
+//    public void updateWinsUsuario(String nombre) {
 //
-//            if (listaUsuario.get(i).getName().equals(nombre)) {
+////        listaUsuario = getUsuarios();
+////        for (int i = 0; i < listaUsuario.size(); i++) {
+////
+////            if (listaUsuario.get(i).getName().equals(nombre)) {
+////
+////                nombre = listaUsuario.get(i).getName();
+//                Usuario userResult = getUsuarioByNombre(nombre);
 //
-//                nombre = listaUsuario.get(i).getName();
-                Usuario userResult = getUsuarioByNombre(nombre);
-
-                // Incrementar las victorias y las monedas de gloria para el usuario ganador
-                ContentValues contentValues = new ContentValues();
-                contentValues.put(COLUMN_GAMES_WON, userResult.getWins() + 1); // Incrementa las victorias
-                contentValues.put(COLUMN_GLORY_COIN_AMOUNT, userResult.getGcAmount() + 1); // Incrementa las monedas de gloria
-
-                // Actualizar el registro del usuario ganador
-                databaseSQL.update(TABLE_NAME, contentValues, COLUMN_NAME + "=?", new String[]{nombre});
-//            }
-//        }
-        closeBD();
-    }
+//                // Incrementar las victorias y las monedas de gloria para el usuario ganador
+//                ContentValues contentValues = new ContentValues();
+//                contentValues.put(COLUMN_GAMES_WON, userResult.getWins() + 1); // Incrementa las victorias
+//                contentValues.put(COLUMN_GLORY_COIN_AMOUNT, userResult.getGcAmount() + 1); // Incrementa las monedas de gloria
+//
+//                // Actualizar el registro del usuario ganador
+//                databaseSQL.update(TABLE_NAME, contentValues, COLUMN_NAME + "=?", new String[]{nombre});
+////            }
+////        }
+//        closeBD();
+//    }
 
     //Pendiente//
-    public void updateDefeatsUsuario(String nombre) {
-
-//        listaUsuario = getUsuarios();
-//        for (int i = 0; i < listaUsuario.size(); i++) {
+//    public void updateDefeatsUsuario(String nombre) {
 //
-//            if (listaUsuario.get(i).getName().contains(nombre)) {
+////        listaUsuario = getUsuarios();
+////        for (int i = 0; i < listaUsuario.size(); i++) {
+////
+////            if (listaUsuario.get(i).getName().contains(nombre)) {
+////
+////                nombre = listaUsuario.get(i).getName();
+//                Usuario userResult = getUsuarioByNombre(nombre);
 //
-//                nombre = listaUsuario.get(i).getName();
-                Usuario userResult = getUsuarioByNombre(nombre);
+//                // Incrementar las derrotas
+//                ContentValues contentValues = new ContentValues();
+//                contentValues.put(COLUMN_GAMES_LOST, userResult.getDefeats() + 1); // Incrementa las victorias
+//
+//                // Actualizar el registro del usuario perdedor
+//                databaseSQL.update(TABLE_NAME, contentValues, COLUMN_NAME + "=?", new String[]{nombre});
+////            }
+////        }
+//        closeBD();
+//    }
 
-                // Incrementar las derrotas
-                ContentValues contentValues = new ContentValues();
-                contentValues.put(COLUMN_GAMES_LOST, userResult.getDefeats() + 1); // Incrementa las victorias
+    public void updateWinsUsuario(String nombre) {
+        // Obtener el usuario por nombre
+        Usuario userResult = getUsuarioByNombre(nombre);
 
-                // Actualizar el registro del usuario perdedor
-                databaseSQL.update(TABLE_NAME, contentValues, COLUMN_NAME + "=?", new String[]{nombre});
-//            }
-//        }
-        closeBD();
+        if (userResult != null) {
+            // Incrementar las victorias y las monedas de gloria para el usuario ganador
+            int wins = userResult.getWins() + 1;
+            int gcAmount = userResult.getGcAmount() + 1;
+
+            // Actualizar las columnas en la base de datos
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(COLUMN_GAMES_WON, wins);
+            contentValues.put(COLUMN_GLORY_COIN_AMOUNT, gcAmount);
+
+            // Actualizar el registro del usuario ganador
+            SQLiteDatabase database = getWritableDatabase();
+            database.update(TABLE_NAME, contentValues, COLUMN_NAME + "=?", new String[]{nombre});
+
+            // Cerrar la conexión a la base de datos
+            database.close();
+        } else {
+            // El usuario no fue encontrado, puedes manejar este caso según tu lógica
+            Log.e("Database", "Usuario no encontrado: " + nombre);
+        }
     }
+
+    public void updateDefeatsUsuario(String nombre) {
+        // Obtener el usuario por nombre
+        Usuario userResult = getUsuarioByNombre(nombre);
+
+        // Verificar si el usuario existe
+        if (userResult != null) {
+            // Incrementar las derrotas
+            int newDefeats = userResult.getDefeats() + 1;
+
+            // Crear objeto ContentValues para almacenar los nuevos valores
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(COLUMN_GAMES_LOST, newDefeats);
+
+            // Actualizar la base de datos
+            SQLiteDatabase database = this.getWritableDatabase();
+            database.update(TABLE_NAME, contentValues, COLUMN_NAME + "=?", new String[]{nombre});
+            database.close(); // Cerrar la base de datos después de la operación
+
+            // Notificar que la actualización fue exitosa
+            Log.d("Database", "Se ha actualizado el número de derrotas del usuario " + nombre);
+        } else {
+            // Notificar si el usuario no fue encontrado
+            Log.e("Database", "El usuario con el nombre " + nombre + " no fue encontrado");
+        }
+    }
+
 
 
     //Implementar en un futuro, no es necesario para el TFG//

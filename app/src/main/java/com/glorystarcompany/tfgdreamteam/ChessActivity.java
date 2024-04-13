@@ -55,9 +55,10 @@ public class ChessActivity extends AppCompatActivity implements View.OnClickList
         } else if (v.getId()== R.id.playChessSelectedImageButton) {
             toastMessage = "Pendiente";
             showToast(toastMessage);
-//            Intent goToChessGameActivity = new Intent(this, ChessGameActivity.class);
-//            goToChessGameActivity.putExtra("usuarioActualChessActivity", usuarioActualChessActivity);
-//            startActivity(goToChessGameActivity);
+            Intent goToFirstPageActivity = new Intent(this, FirstPage.class);
+            goToFirstPageActivity.putExtra("usuarioActualChessActivity", usuarioActualChessActivity);
+            startActivity(goToFirstPageActivity);
+            finish();
 
         } else if (v.getId()== R.id.difficultyChessSelectedImageButton) {
             toastMessage = "En desarrollo, sea paciente...";

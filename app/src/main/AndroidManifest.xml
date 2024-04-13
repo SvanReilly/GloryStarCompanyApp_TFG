@@ -85,6 +85,12 @@
             tools:ignore="LockedOrientationActivity">
         </activity>
 
+        <activity
+            android:name=".FirstPage"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
+        </activity>
+
     </application>
 
 </manifest>

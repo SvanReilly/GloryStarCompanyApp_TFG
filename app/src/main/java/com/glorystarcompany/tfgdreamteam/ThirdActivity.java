@@ -33,8 +33,13 @@ public class ThirdActivity extends AppCompatActivity implements View.OnClickList
         Intent firstActivityIntentContainer = getIntent();
         usuarioLogueado = firstActivityIntentContainer.getStringExtra("usuarioActualFirstActivity");
 
-        if (usuarioLogueado == null){
+        if (usuarioLogueado == null && usuarioNuevoLogueado!=null){
             usuarioLogueado = usuarioNuevoLogueado;
+        } else if (usuarioLogueado == null && usuarioNuevoLogueado == null) {
+
+            Intent chessGameResultIntent = getIntent();
+            usuarioLogueado = chessGameResultIntent.getStringExtra("usuarioResultante");
+
         }
 
 
