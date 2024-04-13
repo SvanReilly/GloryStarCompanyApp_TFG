@@ -83,7 +83,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
                     if (username.equals(listadoUsuariosExistentes.get(i).getName()) && pass.equals(listadoUsuariosExistentes.get(i).getPassword())) {
 
                         usuarioEntrante = listadoUsuariosExistentes.get(i);
-                        loginMessage = "Accediendo...";
+                        loginMessage = "Iniciando sesión...";
                         showToast(loginMessage);
 
                         Intent goToThirdActivity = new Intent(this, ThirdActivity.class);

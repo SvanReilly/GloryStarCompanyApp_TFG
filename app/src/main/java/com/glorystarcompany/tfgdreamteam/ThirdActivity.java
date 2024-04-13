@@ -77,6 +77,8 @@ public class ThirdActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
 
         if (v.getId()== R.id.logOutImageButton) {
+            toastMessage = "Cerrando sesión...";
+            showToast(toastMessage);
             Intent goBackToFirstActivity = new Intent(this, FirstActivity.class);
             startActivity(goBackToFirstActivity);
             finish();
@@ -86,20 +88,21 @@ public class ThirdActivity extends AppCompatActivity implements View.OnClickList
             startActivity(goToSettingsActivity);
 
         } else if (v.getId()== R.id.gamesImageButton) {
-            toastMessage = "Pendiente";
+            toastMessage = "Cargando lista de juegos disponibles...";
             showToast(toastMessage);
             Intent goToGamesActivity = new Intent(this, GamesActivity.class);
             goToGamesActivity.putExtra("usuarioActualThirdActivity", usuarioLogueado);
             startActivity(goToGamesActivity);
         } else if (v.getId()== R.id.onlineImageButton) {
-            toastMessage = "Próximamente. En desarrollo...";
+            toastMessage = "En desarrollo, sea paciente...";
             showToast(toastMessage);
         } else if (v.getId()== R.id.recordsImageButton) {
+            toastMessage = "Cargando ranking global...";
             Intent goToRankingActivity = new Intent(this, RankingActivity.class);
             startActivity(goToRankingActivity);
             showToast(toastMessage);
         } else if (v.getId()== R.id.eventsImageButton) {
-            toastMessage = "Próximamente. En desarrollo...";
+            toastMessage = "Llegando a acuerdos con organizaciones oficiales...";
             showToast(toastMessage);
         } else if (v.getId()== R.id.creditosImageButton) {
             Intent goToCreditsActivity = new Intent(this, CreditsActivity.class);

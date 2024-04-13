@@ -20,7 +20,7 @@
 
         <ImageButton
             android:id="@+id/imageButtonBackGamesToThird"
-            android:layout_width="80sp"
+            android:layout_width="70sp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/back"
             android:layout_gravity="start"
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="130sp"
             app:srcCompat="@drawable/juegos"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             />
 
     </TableRow>

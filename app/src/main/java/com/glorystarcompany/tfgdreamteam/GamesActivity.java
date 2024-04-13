@@ -39,11 +39,11 @@ public class GamesActivity extends AppCompatActivity implements View.OnClickList
         goBackImageButtonMain.setOnClickListener(this);
 
         chessActivityImageButtonMain = findViewById(R.id.chessGamesActivityImageView);
-        Glide.with(this).asGif().load(R.drawable.back).into(chessActivityImageButtonMain);
+        Glide.with(this).asGif().load(R.drawable.chess).into(chessActivityImageButtonMain);
         chessActivityImageButtonMain.setOnClickListener(this);
 
         threeInARowActivityImageButtonMain = findViewById(R.id.threeInARowGamesActivityImageView);
-        Glide.with(this).asGif().load(R.drawable.back).into(threeInARowActivityImageButtonMain);
+        Glide.with(this).asGif().load(R.drawable.tresenrayagame).into(threeInARowActivityImageButtonMain);
         threeInARowActivityImageButtonMain.setOnClickListener(this);
     }
 
@@ -55,14 +55,14 @@ public class GamesActivity extends AppCompatActivity implements View.OnClickList
             startActivity(goBackToThirdActivity);
             finish();
         } else if (v.getId()== R.id.chessGamesActivityImageView) {
-            toastMessage = "Pendiente";
+            toastMessage = "Cargando...";
             showToast(toastMessage);
             Intent goToChessActivity = new Intent(this, ChessActivity.class);
             goToChessActivity.putExtra("usuarioActualGames", usuarioActualGames);
             startActivity(goToChessActivity);
 
         } else if (v.getId()== R.id.threeInARowGamesActivityImageView) {
-            toastMessage = "Pendiente";
+            toastMessage = "Cargando...";
             showToast(toastMessage);
             Intent goToThreeInARowActivity = new Intent(this, ThreeInARowActivity.class);
             goToThreeInARowActivity.putExtra("usuarioActualGames", usuarioActualGames);
@@ -73,7 +73,7 @@ public class GamesActivity extends AppCompatActivity implements View.OnClickList
 
     private void showToast(String loginMessage) {
         // Crea el Toast con la duración corta
-        toast = Toast.makeText(getApplicationContext(), loginMessage, Toast.LENGTH_SHORT);
+        toast = Toast.makeText(getApplicationContext(), loginMessage, Toast.LENGTH_LONG);
         toast.show(); // Muestra el Toast
 
         // Crea un temporizador para cancelar el Toast después de 2 segundos

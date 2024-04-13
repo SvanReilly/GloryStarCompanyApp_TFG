@@ -34,7 +34,7 @@ public class ThreeInARowActivity extends AppCompatActivity implements View.OnCli
         goBackToGamesImageButtonMain.setOnClickListener(this);
 
         threeInARowImageViewMain = findViewById(R.id.threeInARowActivitySelectedImageView);
-        Glide.with(this).asGif().load(R.drawable.chess).into(threeInARowImageViewMain);
+        Glide.with(this).asGif().load(R.drawable.tresenrayagame).into(threeInARowImageViewMain);
 
         threeInARowPlayImageButtonMain = findViewById(R.id.playThreeInARowSelectedImageButton);
         Glide.with(this).asGif().load(R.drawable.jugar).into(threeInARowPlayImageButtonMain);
@@ -56,12 +56,12 @@ public class ThreeInARowActivity extends AppCompatActivity implements View.OnCli
         } else if (v.getId()== R.id.playThreeInARowSelectedImageButton) {
             toastMessage = "Pendiente";
             showToast(toastMessage);
-            Intent goToThreeInARowGameActivity = new Intent(this, ThreeInARowGameActivity.class);
-            goToThreeInARowGameActivity.putExtra("usuarioActualThreeInARowActivity", usuarioActualThreeInARowActivity);
-            startActivity(goToThreeInARowGameActivity);
+//            Intent goToThreeInARowGameActivity = new Intent(this, ThreeInARowGameActivity.class);
+//            goToThreeInARowGameActivity.putExtra("usuarioActualThreeInARowActivity", usuarioActualThreeInARowActivity);
+//            startActivity(goToThreeInARowGameActivity);
 
         } else if (v.getId()== R.id.difficultyThreeInARowSelectedImageButton) {
-            toastMessage = "Próximamente...";
+            toastMessage = "En desarrollo, sea paciente...";
             showToast(toastMessage);
         }
     }
