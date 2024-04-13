@@ -3,13 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/threeinarow"
+    android:id="@+id/threeinarowgame"
+    tools:context=".ThreeInARowGameActivity"
+    android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ThreeInARowActivity" >
-
+    >
 
     <TextView
         android:id="@+id/textView"
@@ -19,7 +19,6 @@
         android:textAlignment="center"
         android:textSize="25sp"
 
-        android:text="Hello 3 In A Row Activity!" />
-
+        android:text="Hello 3InARowGAMEActivity!" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

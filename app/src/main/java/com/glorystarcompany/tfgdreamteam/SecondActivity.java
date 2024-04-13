@@ -105,7 +105,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
                     signUpMessage = "Usuario creado. Accediendo...";
                     showToast(signUpMessage);
                     Intent goToThirdActivity = new Intent(this, ThirdActivity.class);
-                    goToThirdActivity.putExtra("usuarioNuevo", usuarioNuevo);
+                    goToThirdActivity.putExtra("usuarioActualSecondActivity", usuarioNuevo.getName());
                     startActivity(goToThirdActivity);
                     finish();
                 }

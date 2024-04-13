@@ -18,15 +18,21 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     private ImageView settingsImageViewMain, gloryCoinImageViewIconMain;
     private TextView usernameTextViewMain, mailTextViewMain,
             winsTextViewMain, defeatsTextViewMain, gloryCoinAmountTextViewMain;
-    private Usuario usuarioActualAjustesMain;
+    private String usuarioActualAjustesMain;
 
+    private Usuario usuarioActualizadoLogueado;
+
+    private UsuariosBD usuariosGloryStarActualizados;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        usuariosGloryStarActualizados = new UsuariosBD(getApplicationContext());
 
         Intent ThirdActivityIntentContainer = getIntent();
-        usuarioActualAjustesMain = (Usuario) ThirdActivityIntentContainer.getSerializableExtra("ajustesUsuarioActual");
+        usuarioActualAjustesMain = ThirdActivityIntentContainer.getStringExtra("usuarioActualThirdActivity");
+
+        usuarioActualizadoLogueado = usuariosGloryStarActualizados.getUsuarioByNombre(usuarioActualAjustesMain);
 
         goBackThirdActivityImageButtonMain = findViewById(R.id.imageButtonBackSettings);
         Glide.with(this).asGif().load(R.drawable.back).into(goBackThirdActivityImageButtonMain);
@@ -39,19 +45,19 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         Glide.with(this).asGif().load(R.drawable.glorycoin).into(gloryCoinImageViewIconMain);
 
         usernameTextViewMain = findViewById(R.id.usernameTextView);
-        usernameTextViewMain.setText(usuarioActualAjustesMain.getName());
+        usernameTextViewMain.setText(usuarioActualizadoLogueado.getName());
 
         mailTextViewMain = findViewById(R.id.mailTextView);
-        mailTextViewMain.setText(usuarioActualAjustesMain.getMail());
+        mailTextViewMain.setText(usuarioActualizadoLogueado.getMail());
 
         winsTextViewMain = findViewById(R.id.winsTextView);
-        winsTextViewMain.setText(String.valueOf(usuarioActualAjustesMain.getWins()));
+        winsTextViewMain.setText(String.valueOf(usuarioActualizadoLogueado.getWins()));
 
         defeatsTextViewMain = findViewById(R.id.defeatsTextView);
-        defeatsTextViewMain.setText(String.valueOf(usuarioActualAjustesMain.getDefeats()));
+        defeatsTextViewMain.setText(String.valueOf(usuarioActualizadoLogueado.getDefeats()));
 
         gloryCoinAmountTextViewMain = findViewById(R.id.gloryCoinAmountTextView);
-        gloryCoinAmountTextViewMain.setText(String.valueOf(usuarioActualAjustesMain.getGcAmount()));
+        gloryCoinAmountTextViewMain.setText(String.valueOf(usuarioActualizadoLogueado.getGcAmount()));
 
     }
 

@@ -15,7 +15,7 @@ public class ThirdActivity extends AppCompatActivity implements View.OnClickList
     private Toast toast;
     private String toastMessage;
 
-    private Usuario usuarioLogueado, usuarioNuevoLogueado;
+    private String usuarioLogueado, usuarioNuevoLogueado;
     private ImageButton goBackImageButtonMain, settingsActivityImageButtonMain,
             gamesImageButtonMain, onlineImageButtonMain,
             recordsImageButtonMain, eventsImageButtonMain,
@@ -26,23 +26,22 @@ public class ThirdActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
 
+
         Intent secondActivityIntentContainer = getIntent();
-        usuarioNuevoLogueado = (Usuario) secondActivityIntentContainer.getSerializableExtra("usuarioNuevo");
+        usuarioNuevoLogueado = secondActivityIntentContainer.getStringExtra("usuarioActualSecondActivity");
 
         Intent firstActivityIntentContainer = getIntent();
-        usuarioLogueado = (Usuario) firstActivityIntentContainer.getSerializableExtra("usuarioEntrante");
+        usuarioLogueado = firstActivityIntentContainer.getStringExtra("usuarioActualFirstActivity");
 
         if (usuarioLogueado == null){
             usuarioLogueado = usuarioNuevoLogueado;
         }
 
+
         currentUserName=findViewById(R.id.usernameTextViewThird);
 
-        currentUserName.setText(usuarioLogueado.getName());
+        currentUserName.setText(usuarioLogueado);
 
-//        goBackImageButtonMain = findViewById(R.id.imageButtonBackThird);
-//        Glide.with(this).asGif().load(R.drawable.back).into(goBackImageButtonMain);
-//        goBackImageButtonMain.setOnClickListener(this);
 
         settingsActivityImageButtonMain = findViewById(R.id.settingsImageButton);
         Glide.with(this).asGif().load(R.drawable.settings).into(settingsActivityImageButtonMain);
@@ -83,15 +82,15 @@ public class ThirdActivity extends AppCompatActivity implements View.OnClickList
             finish();
         } else if (v.getId()== R.id.settingsImageButton) {
             Intent goToSettingsActivity = new Intent(this, SettingsActivity.class);
-            goToSettingsActivity.putExtra("ajustesUsuarioActual", usuarioLogueado);
+            goToSettingsActivity.putExtra("usuarioActualThirdActivity", usuarioLogueado);
             startActivity(goToSettingsActivity);
 
         } else if (v.getId()== R.id.gamesImageButton) {
             toastMessage = "Pendiente";
             showToast(toastMessage);
-//            Intent goToGamesActivity = new Intent(this, GamesActivity.class);
-//            goToGamesActivity.putExtra("ajustesUsuarioActual", usuarioLogueado);
-//            startActivity(goToGamesActivity);
+            Intent goToGamesActivity = new Intent(this, GamesActivity.class);
+            goToGamesActivity.putExtra("usuarioActualThirdActivity", usuarioLogueado);
+            startActivity(goToGamesActivity);
         } else if (v.getId()== R.id.onlineImageButton) {
             toastMessage = "Próximamente. En desarrollo...";
             showToast(toastMessage);

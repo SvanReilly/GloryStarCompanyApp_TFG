@@ -88,7 +88,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
 
                         Intent goToThirdActivity = new Intent(this, ThirdActivity.class);
                         //Esto permite enviar los datos al ThirdActiivty del objeto usuarioEntrante que hemos cotejado y recogido de la bbdd
-                        goToThirdActivity.putExtra("usuarioEntrante", usuarioEntrante);
+                        goToThirdActivity.putExtra("usuarioActualFirstActivity", usuarioEntrante.getName());
 
                         credentialsMatch = true; // Establece la bandera en verdadero porque se encontró una coincidencia
                         startActivity(goToThirdActivity);

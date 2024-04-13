@@ -1,18 +1,85 @@
 package com.glorystarcompany.tfgdreamteam;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ThreeInARowActivity extends AppCompatActivity {
+import com.bumptech.glide.Glide;
+
+public class ThreeInARowActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private Toast toast;
+    private String toastMessage, usuarioActualThreeInARowActivity;
+    private ImageView threeInARowImageViewMain;
+
+    private ImageButton goBackToGamesImageButtonMain, threeInARowPlayImageButtonMain,
+            threeInARowDifficultyImageButtonMain;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_three_in_a_row);
+        setContentView(R.layout.activity_three_in_a_row_selected);
 
+        Intent ThirdActivityContainerToGames = getIntent();
+        usuarioActualThreeInARowActivity = ThirdActivityContainerToGames.getStringExtra("usuarioActualGames");
 
+        goBackToGamesImageButtonMain = findViewById(R.id.imageButtonBackThreeInARowToGames);
+        Glide.with(this).asGif().load(R.drawable.back).into(goBackToGamesImageButtonMain);
+        goBackToGamesImageButtonMain.setOnClickListener(this);
 
+        threeInARowImageViewMain = findViewById(R.id.threeInARowActivitySelectedImageView);
+        Glide.with(this).asGif().load(R.drawable.chess).into(threeInARowImageViewMain);
+
+        threeInARowPlayImageButtonMain = findViewById(R.id.playThreeInARowSelectedImageButton);
+        Glide.with(this).asGif().load(R.drawable.jugar).into(threeInARowPlayImageButtonMain);
+        threeInARowPlayImageButtonMain.setOnClickListener(this);
+
+        threeInARowDifficultyImageButtonMain= findViewById(R.id.difficultyThreeInARowSelectedImageButton);
+        Glide.with(this).asGif().load(R.drawable.dificultad).into(threeInARowDifficultyImageButtonMain);
+        threeInARowDifficultyImageButtonMain.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        if (v.getId()== R.id.imageButtonBackThreeInARowToGames) {
+            Intent goBackToGamesActivity = new Intent(this, GamesActivity.class);
+            startActivity(goBackToGamesActivity);
+            finish();
+        } else if (v.getId()== R.id.playThreeInARowSelectedImageButton) {
+            toastMessage = "Pendiente";
+            showToast(toastMessage);
+            Intent goToThreeInARowGameActivity = new Intent(this, ThreeInARowGameActivity.class);
+            goToThreeInARowGameActivity.putExtra("usuarioActualThreeInARowActivity", usuarioActualThreeInARowActivity);
+            startActivity(goToThreeInARowGameActivity);
+
+        } else if (v.getId()== R.id.difficultyThreeInARowSelectedImageButton) {
+            toastMessage = "Próximamente...";
+            showToast(toastMessage);
+        }
+    }
+    private void showToast(String loginMessage) {
+        // Crea el Toast con la duración corta
+        toast = Toast.makeText(getApplicationContext(), loginMessage, Toast.LENGTH_SHORT);
+        toast.show(); // Muestra el Toast
+
+        // Crea un temporizador para cancelar el Toast después de 2 segundos
+        new CountDownTimer(2000, 1000) {
+            public void onTick(long millisUntilFinished) {
+                // No es necesario hacer nada en cada tick
+            }
+
+            public void onFinish() {
+                toast.cancel(); // Cancela el Toast cuando el temporizador termina
+            }
+        }.start(); // Inicia el temporizador
     }
 }
 
