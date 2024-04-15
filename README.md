@@ -1,23 +1,52 @@
 # Glory Star Company Logo.
 ![GloryStarCompanyLogo](app/src/main/res/drawable/glorystarcompanylogo.png)
+<div style="text-align:center;">
+    <img src="app/src/main/res/drawable/glorystarcompanylogo.png" alt="scr1" width="500">
+</div>
 
 
 ## Screenshot 1
-![scr1](screenshots/screen1.jpg)
-## Screenshot 
-<img src="screenshots/screen1.jpg" alt="scr1" width="300">
-![scr2](screenshots/screen2.jpg)
+<div style="text-align:center;">
+    <img src="screenshots/screen1.jpg" alt="scr1" width="300">
+</div>
+
+## Screenshot 2
+<div style="text-align:center;">
+    <img src="screenshots/screen2.jpg" alt="scr1" width="300">
+</div>
+
 ## Screenshot 3
-![scr3](screenshots/screen3.jpg)
+<div style="text-align:center;">
+    <img src="screenshots/screen3.jpg" alt="scr1" width="300">
+</div>
+
 ## Screenshot 4
-![scr4](screenshots/screen4.jpg)
+<div style="text-align:center;">
+    <img src="screenshots/screen4.jpg" alt="scr1" width="300">
+</div>
+
 ## Screenshot 5
-![scr5](screenshots/screen5.jpg)
+<div style="text-align:center;">
+    <img src="screenshots/screen5.jpg" alt="scr1" width="300">
+</div>
+
 ## Screenshot 6
-![scr6](screenshots/screen6.jpg)
+<div style="text-align:center;">
+    <img src="screenshots/screen6.jpg" alt="scr1" width="300">
+</div>
+
 ## Screenshot 7
-![scr7](screenshots/screen7.jpg)
+<div style="text-align:center;">
+    <img src="screenshots/screen7.jpg" alt="scr1" width="300">
+</div>
+
 ## Screenshot 8
-![scr8](screenshots/screen8.jpg)
+<div style="text-align:center;">
+    <img src="screenshots/screen8.jpg" alt="scr1" width="300">
+</div>
+
 ## Screenshot 9
-![scr9](screenshots/screen9.jpg)
+<div style="text-align:center;">
+    <img src="screenshots/screen9.jpg" alt="scr1" width="300">
+</div>
+
