@@ -1,7 +1,7 @@
 # Glory Star Company Logo.
-![GloryStarCompanyLogo](app/src/main/res/drawable/glorystarcompanylogo.png)
+
 <div style="text-align:center;">
-    <img src="app/src/main/res/drawable/glorystarcompanylogo.png" alt="scr1" width="500">
+    <img src="app/src/main/res/drawable/glorystarcompanylogo.png" alt="scr1" width="900">
 </div>
 
 
@@ -42,7 +42,7 @@
 
 ## Screenshot 8
 <div style="text-align:center;">
-    <img src="screenshots/screen8.jpg" alt="scr1" width="300">
+    <img src="screenshots/screen8.jpg" alt="scr1" height="500" width="700">
 </div>
 
 ## Screenshot 9
