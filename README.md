@@ -47,6 +47,6 @@
 
 ## Screenshot 9
 <p align="center";">
-    <img src="screenshots/screen9.jpg" alt="scr1" width="500">
+    <img src="screenshots/screen9.jpg" alt="scr1" width="700">
 </p>
 
