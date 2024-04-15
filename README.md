@@ -1,7 +1,7 @@
 # Glory Star Company Logo.
 
 <div style="text-align:center;">
-    <img src="app/src/main/res/drawable/glorystarcompanylogo.png" alt="scr1" width="900">
+    <img src="app/src/main/res/drawable/glorystarcompanylogo.png" alt="scr1" width="700">
 </div>
 
 
