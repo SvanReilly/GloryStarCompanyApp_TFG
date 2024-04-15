@@ -5,7 +5,7 @@
 ## Screenshot 1
 ![scr1](screenshots/screen1.jpg)
 ## Screenshot 
-#
+<img src="screenshots/screen1.jpg" alt="scr1" width="300">
 ![scr2](screenshots/screen2.jpg)
 ## Screenshot 3
 ![scr3](screenshots/screen3.jpg)
